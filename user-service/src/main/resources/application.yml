@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5433/foodai}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:password}
+    driver-class-name: org.postgresql.Driver
+    #?options=-c%20TimeZone=Asia/Kolkata
+  data:
+    redis:
+      port: 6379
+      host: localhost
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        jdbc.time_zone: Asia/Kolkata
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+  flyway:
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:Zm9vZGFpLXN1cGVyLXNlY3JldC1rZXktZm9yLWhzMjU2LXRva2VuLXNpZ25pbmctMDEyMzQ1Njc4OQ==}
+    expiration-millis: ${JWT_EXPIRATION_MILLIS:3600000}
+
+server:
+  port: ${SERVER_PORT:8082}
