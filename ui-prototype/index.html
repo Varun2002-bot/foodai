@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FoodAI — Design v1</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="container">
+          <a class="brand" href="./index.html" aria-label="FoodAI home">
+            <span class="logo" aria-hidden="true"></span>
+            <span class="brand-text">FoodAI</span>
+            <span class="brand-pill">Design v1</span>
+          </a>
+          <nav class="topbar-nav" aria-label="Primary">
+            <a class="nav-link" href="./signup.html">Signup</a>
+            <a class="nav-link" href="./login.html">Login</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="container hero">
+        <section class="hero-left">
+          <h1 class="h1">
+            Premium AI-driven food, grocery, and rides — with a distinctive driver interface.
+          </h1>
+          <p class="lead">
+            This prototype focuses on a calm, premium consumer experience and a signature Driver
+            <span class="accent">Stop Stack</span> Command Center optimized for multi-stop batching.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn primary" href="./signup.html">Create account</a>
+            <a class="btn" href="./login.html">Sign in</a>
+          </div>
+
+          <div class="meta-grid" role="list">
+            <div class="meta" role="listitem">
+              <div class="meta-title">AI surfaces</div>
+              <div class="meta-body">Prompt bar, explainability chips, smart substitutions, proactive ETA.</div>
+            </div>
+            <div class="meta" role="listitem">
+              <div class="meta-title">Premium feel</div>
+              <div class="meta-body">Warm neutrals, restrained spacing, strong numerals, crisp motion.</div>
+            </div>
+            <div class="meta" role="listitem">
+              <div class="meta-title">Driver uniqueness</div>
+              <div class="meta-body">Stop Stack batching + AI route coach + outdoor-visible Focus Mode.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="hero-right" aria-label="Preview">
+          <div class="preview-card">
+            <div class="preview-top">
+              <div class="chip">Consumer</div>
+              <div class="chip ghost">Driver</div>
+              <div class="spacer"></div>
+              <div class="mini-pill">ETA 18 min</div>
+            </div>
+            <div class="preview-grid">
+              <div class="preview-pane">
+                <div class="preview-title">Ask FoodAI</div>
+                <div class="preview-row">
+                  <div class="pill">High protein</div>
+                  <div class="pill">Under ₹250</div>
+                  <div class="pill">Spicy veg</div>
+                </div>
+                <div class="preview-cards">
+                  <div class="card ghost-card"></div>
+                  <div class="card ghost-card"></div>
+                  <div class="card ghost-card"></div>
+                </div>
+              </div>
+              <div class="preview-pane">
+                <div class="preview-title">Stop Stack</div>
+                <div class="stack-mini">
+                  <div class="stop pickup">
+                    <div class="dot"></div>
+                    <div class="stop-text">Pickup • Royal Biryani</div>
+                    <div class="badge">Ready</div>
+                  </div>
+                  <div class="stop pickup">
+                    <div class="dot"></div>
+                    <div class="stop-text">Pickup • Green Basket</div>
+                    <div class="badge warn">+6m</div>
+                  </div>
+                  <div class="stop drop">
+                    <div class="dot"></div>
+                    <div class="stop-text">Drop • A-1207, Orion</div>
+                    <div class="badge">Next</div>
+                  </div>
+                </div>
+                <div class="coach-mini">AI Coach: reorder stops to avoid 12m idle.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="container footer">
+        <div class="footer-note">
+          Tip: open `ui-prototype/index.html` directly, or run a tiny local server for best navigation.
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

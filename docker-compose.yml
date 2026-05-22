@@ -1,0 +1,33 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: foodai-postgres
+    environment:
+      POSTGRES_DB: foodai
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      TZ: Asia/Kolkata
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  user-service:
+    build:
+      context: .
+      dockerfile: user-service/Dockerfile
+    container_name: foodai-user-service
+    depends_on:
+      - postgres
+    environment:
+      SERVER_PORT: 8082
+      DB_URL: jdbc:postgresql://postgres:5432/foodai?options=-c%20TimeZone=Asia/Kolkata
+      DB_USERNAME: postgres
+      DB_PASSWORD: password
+      JWT_SECRET: Zm9vZGFpLXN1cGVyLXNlY3JldC1rZXktZm9yLWhzMjU2LXRva2VuLXNpZ25pbmctMDEyMzQ1Njc4OQ==
+      JWT_EXPIRATION_MILLIS: 3600000
+    ports:
+      - "8082:8082"
+
+volumes:
+  postgres-data:
